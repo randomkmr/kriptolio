@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HomePage, LoginPage, RegisterPage, FavouritesPage, PortfolioPage, NotFoundPage } from "./pages"
+import { NavBar } from "./components/NavBar";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <b>Kriptolio</b>
+      <br />
+      Crypto Portfolio Tracker
+      <Router>
+        <NavBar />
+        <div>
+          <Routes>
+            <Route path="/" exact element={<HomePage />} />
+            <Route path="/login" exact element={<LoginPage />} />
+            <Route path="/register" exact element={<RegisterPage />} />
+            <Route path="/favourites" exact element={<FavouritesPage />} />
+            <Route path="/portfolio" exact element={<PortfolioPage />} />
+
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </div>
+      </Router>
     </div>
   );
 }
