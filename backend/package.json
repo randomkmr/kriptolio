@@ -1,0 +1,28 @@
+{
+  "name": "krp_back",
+  "version": "1.0.0",
+  "description": "only backend",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Just a test\" && exit 1",
+    "start": "nodemon app.js",
+    "lint": "eslint src --ext .js"
+  },
+  "author": "KM",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^14.3.2",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.25.4",
+    "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.15"
+  },
+  "devDependencies": {
+    "eslint": "^8.7.0"
+  }
+}
