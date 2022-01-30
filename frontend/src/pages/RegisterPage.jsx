@@ -6,7 +6,7 @@ export const RegisterPage = () => {
     const [password, setPassword] = useState('');
 
     return (
-        <form action="/register" method="POST">
+        <form>
             <h1>Please Register!</h1>
             <div><input type="text" placeholder="Full Name" value={full_name} onChange={e => setName(e.target.value)} /></div>
             <div><input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} /></div>
@@ -26,6 +26,7 @@ export const RegisterPage = () => {
                             password: password,
                         }),
                     });
+                //redirect, autologin, message
                 } catch (err) {
                     console.log(err);
                 }
