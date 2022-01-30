@@ -23,5 +23,5 @@ amount INT NOT NULL
 CREATE TABLE descriptions (
 id INT AUTO_INCREMENT PRIMARY KEY,
 asset_code varchar(20) NOT NULL,
-description TEST NOT NULL
+description TEXT NOT NULL
 )
