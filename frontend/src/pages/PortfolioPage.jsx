@@ -13,6 +13,6 @@ export const PortfolioPage = () => {
     }
 
     return (
-        <h1>Your portfolio ${user_email}!</h1>
+        <h1>Your portfolio {user_email}!</h1>
     )
 }
