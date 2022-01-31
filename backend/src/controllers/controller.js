@@ -24,7 +24,7 @@ exports.login = async (req, res) => {
       secure: true,
       maxAge: 90000,
     });
-    res.status(201).json({ message: "Successfully Logged in", status: 201 });
+    res.status(201).send({token});
   } catch (error) {
     res.status(500).json({ error });
   }

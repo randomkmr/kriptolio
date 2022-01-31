@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { HomePage, LoginPage, RegisterPage, FavouritesPage, PortfolioPage, NotFoundPage } from "./pages"
 import { NavBar } from "./components/NavBar";
 import "./App.css";
+import "../node_modules/font-awesome/css/font-awesome.css"
+
 
 function App() {
   return (

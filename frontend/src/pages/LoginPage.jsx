@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const LoginPage = () => {
+export const LoginPage = ({ setToken }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -12,19 +12,17 @@ export const LoginPage = () => {
             <button type="submit" onClick={async (e) => {
                 e.preventDefault();
                 try {
-                    let response = await fetch("http://localhost:5000/login", {
+                    let token = await fetch("http://localhost:5000/login", {
                         method: "POST",
                         headers: {
                             'Accept': 'application/json',
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify({
-                            email: email,
-                            password: password,
-                        }),
-                    });
-                    console.log(response)
-                    //redirect, message
+                        body: JSON.stringify({email,password}),
+                    }).then(data => data.json());
+                    //console.log(token)
+                    
+                    setToken(token)
                 } catch (err) {
                     console.log(err);
                 }

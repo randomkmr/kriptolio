@@ -47,6 +47,6 @@ exports.loginUser = async (email, password) => {
     },
     secretKey
   );
-  console.log(token);
+  console.log("Tokenas: ", token);
   return token;
 };
