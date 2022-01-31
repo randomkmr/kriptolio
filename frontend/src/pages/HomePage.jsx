@@ -27,6 +27,7 @@ export const HomePage = () => {
                         <td>Symbol</td>
                         <td>Price</td>
                         <td>Favourite</td>
+                        <td></td>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,6 +44,7 @@ export const HomePage = () => {
                                     <td>{asset.symbol}</td>
                                     <td>EUR {asset.price.toFixed(4)}</td>
                                     <td><FontAwesomeIcon icon={faStar} /><i className="fa fa-star-o"></i></td>
+                                    <td><button>Add to portfolio</button></td>
                                 </tr>
 
                             );
