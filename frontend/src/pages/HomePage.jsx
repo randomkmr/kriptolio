@@ -1,10 +1,12 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import useToken from "../App/useToken";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const HomePage = () => {
     const [crypto, setCrypto] = useState([]);
+    const { token, setToken } = useToken();  
 
     useEffect(() => {
         fetch(`https://api.coinstats.app/public/v1/coins?skip=0&limit=50&currency=EUR`)
@@ -44,7 +46,8 @@ export const HomePage = () => {
                                     <td>{asset.symbol}</td>
                                     <td>EUR {asset.price.toFixed(4)}</td>
                                     <td><FontAwesomeIcon icon={faStar} /><i className="fa fa-star-o"></i></td>
-                                    <td><button>Add to portfolio</button></td>
+                                    <td>{token ? <button>Add to portfolio</button> : ""}</td>
+                                    
                                 </tr>
 
                             );

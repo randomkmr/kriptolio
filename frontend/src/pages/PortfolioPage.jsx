@@ -5,12 +5,13 @@ import { LoginPage } from "./LoginPage";
 
 
 export const PortfolioPage = () => {
-    const { token, setToken } = useToken();
-    const user_email = Object.values(jwt(token))[1];
+    const { token, setToken } = useToken();    
 
     if (!token) {
         return <LoginPage setToken={setToken} />;
     }
+
+    const user_email = Object.values(jwt(token))[1];
 
     return (
         <>
